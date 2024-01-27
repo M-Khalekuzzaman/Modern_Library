@@ -1,0 +1,22 @@
+{% extends 'profile_page_base.html' %}
+{% block content %}
+
+<section class="section-conten padding-y bg">
+<div class="container">
+	<div class="row">
+	{% include 'dashboard_sidebar.html' %}
+	<main class="col-md-9">
+		<article class="card">
+		<header class="card-header">
+			<strong class="d-inline-block mr-3">Logged in as: {{user.last_name}}</strong>
+			<span>{{user.full_name}}</span>
+		</header>		
+		</article> 
+	</main>
+</div>
+</div>
+
+
+</section>
+
+{% endblock %}

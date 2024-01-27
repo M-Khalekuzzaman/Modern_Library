@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+{% if messages %}
+  {% for m in messages %}
+    <div class="alert alert-primary alert-sm" role="alert" style = "width:30%; margin:auto; height:5%;">
+        {{m}}
+    </div>
+  {% endfor %}
+{% endif %}
+<h4 align = 'center'>WELCOME TO LIBRARY LOGIN</h4>
+{% load crispy_forms_tags %}
+<div style = "width:40%; margin:auto; height:20%;">
+    <form method = "POST" novalidate>
+        {% csrf_token %}
+        {% if form.non_fields_errors %}
+        {% for error in form.non_fields_errors %}
+          <p class = "bg-danger text-white px-3">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+        {{form|crispy}}
+        <button class = "btn btn-primary" type = "submit">Submit</button>
+        <small align = 'center'><b><a href = "{% url 'changepass_without_oldpass' %}">Forgot Password?</a></b></small>
+    </form>   
+</div>
+
+{% endblock %}

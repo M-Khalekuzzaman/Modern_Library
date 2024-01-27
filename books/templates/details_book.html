@@ -1,0 +1,30 @@
+{% extends 'profile_page_base.html'%}
+
+{% block title %}
+Books Details
+{% endblock %}
+
+
+{% block content %}
+<h3 align = 'center'>SHOWING BOOKS DETAILS</h3>
+<div class="row">
+    <div class="col-sm-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{book.book_name}}</h5>
+          <p class="card-text">{{book.book_description}}</p>
+          <a href="#" class="btn btn-info">More ...</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{book.book_name}}</h5>
+          <p class="card-text">{{book.book_description}}</p>
+          <a href="#" class="btn btn-info">More ...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

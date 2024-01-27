@@ -1,0 +1,17 @@
+{% extends "profile_page_base.html" %}
+
+{% block title %}
+Edit Profile 
+{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<h3 align = 'center'>Please! Update your data</h3>
+<div style = "width:40%; margin:auto;">
+    <form method = "POST">
+        {% csrf_token %}
+        {{form | crispy}}
+        <button class = "btn btn-primary" type = "submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
